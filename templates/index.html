@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>
+            Loan Application
+        </title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <img style="height:120px;width:180px;" src="{{url_for('static', filename='/images/loan.png')}}" align="middle" />
+
+            <h2>
+                Rushi's AI based Loan Application Prediction
+            </h2>
+            <form action="predict" method="post">
+                 <br><br>
+                 <select  name="Gender" required; style="width: 200px; text-align: center;">
+                 <option value="" disabled selected hidden>Enter Your Gender</option>  
+                 <option value="M">Male </option>  
+                 <option value="F">Female </option>
+                 </select>
+                 <br><br>
+ 
+                 <select  name="Married" required; style="width: 200px; text-align: center;">
+                     <option value="" disabled selected hidden>Your Marital status</option>  
+                     <option value="Un">Unmarried</option>  
+                     <option value="Ma">Married</option>
+                 </select>
+                 <br><br>
+                 <select  name="Dependents" required; style="width: 200px; text-align: center;">
+                     <option value="" disabled selected hidden>Number of Dependents</option>  
+                     <option value="0">0</option>
+                     <option value="1">1 </option>  
+                     <option value="2">2 </option>
+                     <option value="3">3+ </option>
+                 </select>
+                 <br><br>
+                 <select  name="Education" required; style="width: 200px; text-align: center;">
+                     <option value="" disabled selected hidden>Education</option>  
+                     <option value="Grad">Graduate</option>
+                     <option value="UG">Under-Graduate </option>  
+                 </select>
+                 <br><br>
+                 <select  name="SEmp" required; style="width: 200px; text-align: center;">
+                     <option value="" disabled selected hidden>Self Employed</option>  
+                     <option value="Nse">Not Self Employed</option>
+                     <option value="Se">Self Employed </option>  
+                 </select>
+                 <br><br>
+                 <input name="income" type="number" placeholder="Your Monthly income $" min="1" max="1000000" required; style="width: 200px;"/>
+                 <br><br>
+                 <input name="CoInc" type="number" placeholder="Co-Applicant / Spouse Monthly income $" min="1" max="1000000" required; style="width: 270px;"/>
+                 <br><br>
+                 <input name="LoReq" type="number" placeholder="Loan Requirement Amount $" min="1" max="10000000" required; style="width: 200px;"/>
+                 <br>
+            
+                 <select  name="LTerm" required; style="width: 200px; text-align: center;">
+                     <option value="" disabled selected hidden>Term For loan</option>  
+                     <option value="18M">18 Months</option>
+                     <option value="12M">12 Months</option>  
+                     <option value="10M">10 Months </option>  
+                     <option value="8M">8 Months </option>  
+                     <option value="6M">6 Months</option>  
+                 </select>
+                 <br><br>
+                 <select  name="CrH" required; style="width: 200px; text-align: center;">
+                    <option value="" disabled selected hidden> Credit History</option>  
+                    <option value="ND">Never Defaulted</option>
+                    <option value="PD">Previously Defaulted </option>  
+                </select>
+                <br><br>
+                <select  name="PArea" required; style="width: 200px; text-align: center;">
+                    <option value="" disabled selected hidden>Location of your Property</option>  
+                    <option value="sub">Semiurban</option>
+                    <option value="urb">Urban</option>  
+                    <option value="rur">Rural</option>  
+                </select>
+                <br><br>
+
+                <button>Check Your Eligibility</button>
+                 <br><br>
+                 {{prediction_value}}
+            </form>
+
+        </div>
+    </body>
+</html>
